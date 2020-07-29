@@ -15,7 +15,7 @@ echo '修改密码'
 sed -i 's/#define\s*DEF_ROOT_PASSWORD\s*"admin"/#define  DEF_ROOT_PASSWORD     "'$user_password'"/g' $default_path
 
 echo '修改Lan ip'
-sed -i "s/192.168.2/$lan_ip/g" $default_path
+sed -i "s/192.168.100/$lan_ip/g" $default_path
 
 echo '修改Wif密码'
 sed -i "s/1234567890/$wifi_password/g" $default_path
@@ -56,30 +56,30 @@ echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> .config     # SS server
 
 #  代理
 echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=n" >> .config      # TUNSAFE
-echo "CONFIG_FIRMWARE_INCLUDE_KUMASOCKS=y" >> .config    # KUMA
+echo "CONFIG_FIRMWARE_INCLUDE_KUMASOCKS=n" >> .config    # KUMA
 echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config       # srelay
 echo "CONFIG_FIRMWARE_INCLUDE_IPT2SOCKS=n" >> .config    # IPT2
-#echo "CONFIG_FIRMWARE_INCLUDE_MICROSOCKS=y" >> .config  # MICRO
+#echo "CONFIG_FIRMWARE_INCLUDE_MICROSOCKS=n" >> .config  # MICRO
 
 # 文件
-#echo "CONFIG_FIRMWARE_INCLUDE_CADDY=y" >> .config #在线文件管理服务
+#echo "CONFIG_FIRMWARE_INCLUDE_CADDY=n" >> .config #在线文件管理服务
 #echo "CONFIG_FIRMWARE_INCLUDE_CADDYBIN=n" >> .config #集成caddu执行文件，此文件有13M,请注意固件大小。如果不集成，会从网上下载下来执行，不影响正常使用
 
 # 广告
-echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config        # adbyby plus+
-#echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=y" >> .config    # KP广告过滤
-# echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config # ADG 
+echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> .config        # adbyby plus+
+#echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=n" >> .config    # KP广告过滤
+# echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config # ADG 
 
 # DNS 有关
 echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config # DNS-FORWARDER
-echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config     # smartdns
-echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=y" >> .config  # smartdns二进制文件
+echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config     # smartdns
+echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=n" >> .config  # smartdns二进制文件
 
 
 # 穿透
-echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config         # 内网穿透FRPC
-echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config         # 内网穿透FRPS
-echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config      # 阿里DDNS
+echo "CONFIG_FIRMWARE_INCLUDE_FRPC=n" >> .config         # 内网穿透FRPC
+echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> .config         # 内网穿透FRPS
+echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config      # 阿里DDNS
 
 # 其他
 echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config    # MENTOHUST 锐捷认证
